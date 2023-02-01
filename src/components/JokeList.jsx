@@ -11,7 +11,13 @@ function JokeList({ listOfJokes }) {
 }
 
 JokeList.propTypes = {
-  listOfJokes: PropTypes.object.isRequired,
+  listOfJokes: PropTypes.arrayOf(
+    PropTypes.shape({
+      setup: PropTypes.string.isRequired,
+      punchline: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default JokeList;
