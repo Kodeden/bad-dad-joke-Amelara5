@@ -11,7 +11,7 @@ function useJoke() {
     } else if (event.target.textContent.includes("&#x1F44E;&#127997")) {
       setBadJokes((jokeList) => [...jokeList, joke]);
     }
-    setJoke("");
+    setJoke(null);
   };
 
   return { joke, setJoke, goodJokes, badJokes, handleClick };
