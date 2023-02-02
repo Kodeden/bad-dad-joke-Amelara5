@@ -11,7 +11,11 @@ function JokeText({ joke }) {
 }
 
 JokeText.propTypes = {
-  joke: PropTypes.string.isRequired,
+  joke: PropTypes.shape({
+    setup: PropTypes.string.isRequired,
+    punchline: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+  }),
 };
 
 export default JokeText;
