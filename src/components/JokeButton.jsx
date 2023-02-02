@@ -11,7 +11,7 @@ function JokeButton({ setJoke }) {
 
   return (
     <button
-      className="rounded bg-blue-500 px-4 py-2 text-white"
+      className="my-2 rounded bg-bright-yellow-crayola px-4 py-2 text-blood-red"
       onClick={() => getJoke()}
     >
       Get joke
