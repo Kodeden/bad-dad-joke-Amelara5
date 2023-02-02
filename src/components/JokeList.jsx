@@ -2,14 +2,20 @@ import PropTypes from "prop-types";
 
 function JokeList({ listOfJokes }) {
   return (
-    <>
+    <ul>
       {listOfJokes.map((joke) => {
-        return <p key={joke.id}>{`${joke.setup} ${joke.punchline}`}</p>;
+        return (
+          <li key={joke.id} className="px-6 text-lg font-bold">
+            {`${joke.setup} `}
+            <span className=" text-sm font-normal text-rust">
+              {joke.punchline}
+            </span>
+          </li>
+        );
       })}
-    </>
+    </ul>
   );
 }
-
 JokeList.propTypes = {
   listOfJokes: PropTypes.arrayOf(
     PropTypes.shape({
