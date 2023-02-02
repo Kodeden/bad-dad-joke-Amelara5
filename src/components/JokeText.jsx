@@ -4,8 +4,8 @@ function JokeText({ joke }) {
   console.log(joke);
   return (
     <>
-      <div>{joke.setup}</div>
-      <div>{joke.punchline}</div>
+      <p>{joke?.setup}</p>
+      <p>{joke?.punchline}</p>
     </>
   );
 }
