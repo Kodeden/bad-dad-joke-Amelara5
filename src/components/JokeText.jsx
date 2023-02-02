@@ -1,13 +1,19 @@
 import PropTypes from "prop-types";
+import JokeVote from "./JokeVote";
 
-function JokeText({ joke }) {
-  console.log(joke);
-  return (
-    <>
-      <p>{joke?.setup}</p>
-      <p>{joke?.punchline}</p>
-    </>
-  );
+function JokeText({ joke, handleClick }) {
+  if (joke) {
+    return (
+      <>
+        <p className="px-6 text-center text-lg">{joke?.setup}</p>
+        <p className="text-center text-rust">{joke?.punchline}</p>
+        <div>
+          <JokeVote handleClick={handleClick} message={"👍🏽 Funny 👍🏾"} />
+          <JokeVote handleClick={handleClick} message={"👎🏽 Bad 👎🏾"} />
+        </div>
+      </>
+    );
+  }
 }
 
 JokeText.propTypes = {
@@ -16,6 +22,7 @@ JokeText.propTypes = {
     punchline: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
   }),
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default JokeText;
