@@ -4,7 +4,7 @@ function JokeVote({ handleClick, message }) {
   return (
     <>
       <button
-        className="rounded bg-blue-500 px-4 py-2 text-white"
+        className="my-3 mx-1 rounded bg-bright-yellow-crayola px-4 py-2 text-blood-red "
         onClick={handleClick}
       >
         {message}
