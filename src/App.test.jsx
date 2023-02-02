@@ -12,8 +12,10 @@ it("adds jokes to the correct list", async () => {
   await user.click(getJokeBtn);
 
   // These buttons are rendered after the first joke is fetched
-  let goodJokeBtn = await screen.findByRole("button", { name: "👍🏾" });
-  let badJokeBtn = await screen.findByRole("button", { name: "👎🏾" });
+  let goodJokeBtn = await screen.findByRole("button", {
+    name: "👍🏽 Funny 👍🏾",
+  });
+  let badJokeBtn = await screen.findByRole("button", { name: "👎🏽 Bad 👎🏾" });
 
   // First is 👍🏾, second is 👎🏾
   const jokeLists = screen.getAllByRole("list");
@@ -24,19 +26,19 @@ it("adds jokes to the correct list", async () => {
   await user.click(getJokeBtn);
 
   // Keep awaiting these buttons to come back after we click the get joke button
-  goodJokeBtn = await screen.findByRole("button", { name: "👍🏾" });
+  goodJokeBtn = await screen.findByRole("button", { name: "👍🏽 Funny 👍🏾" });
   await user.click(goodJokeBtn);
 
   await user.click(getJokeBtn);
-  goodJokeBtn = await screen.findByRole("button", { name: "👍🏾" });
+  goodJokeBtn = await screen.findByRole("button", { name: "👍🏽 Funny 👍🏾" });
   await user.click(goodJokeBtn);
 
   await user.click(getJokeBtn);
-  badJokeBtn = await screen.findByRole("button", { name: "👎🏾" });
+  badJokeBtn = await screen.findByRole("button", { name: "👎🏽 Bad 👎🏾" });
   await user.click(badJokeBtn);
 
   await user.click(getJokeBtn);
-  badJokeBtn = await screen.findByRole("button", { name: "👎🏾" });
+  badJokeBtn = await screen.findByRole("button", { name: "👎🏽 Bad 👎🏾" });
   await user.click(badJokeBtn);
 
   const goodJokeItems = within(jokeLists[0]).getAllByRole("listitem");
